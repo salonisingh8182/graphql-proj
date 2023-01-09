@@ -1,0 +1,16 @@
+type Query {
+    listStudents: [Student]
+    getStudent(id: ID!): Student       #Student does not have ! as it can be return as null
+}
+
+type Mutation {
+    createStudent(name: String, age: Int): Student!,       
+    deleteStudent(id: ID!): Student,
+    updateStudent(id: ID!, name: String, age: Int): Student
+}
+
+type Student {
+    id: ID!                  #! means it cannot be null and it's its identifier 
+    name: String
+    age: Int
+}
